@@ -1,42 +1,49 @@
 <template>
   <div id="app">
-    <nav class="navbar navbar-dark bg-dark">
+    <nav class="navbar navbar-dark navbar-expand-lg bg-dark">
       <div class="container">
-        <a href="#" class="navbar-brand">TODO</a>
+        <a href="#" class="havbar-brand">TODO</a>
+        <div class="navbar-collapse">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <router-link to="/" class="nav-link">Home</router-link>
+            </li>
+            <li class="nav-item">|</li>
+            <li class="nav-item">
+              <router-link to="/add" class="nav-link">Add New TODO</router-link>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
     <div class="container">
-      <TodoList :todos="todos" />
+      <router-view />
     </div>
   </div>
 </template>
 
-<script>
-import TodoList from "./components/TodoList.vue";
-export default {
-  name: "app",
-  components: {
-    TodoList
-  },
-  data() {
-    return {
-      todos: [
-        {
-          title: "Setup environment",
-          dueDate: new Date(2019, 0, 26),
-          completed: false
-        },
-        {
-          title: "Create main list component",
-          dueDate: new Date(2020, 0, 26),
-          completed: false
-        },
-        { title: "Display TODO items", completed: false }
-      ]
-    };
-  }
-};
-</script>
+<style>
+</style>
+
 
 <style>
+#app {
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #2c3e50;
+}
+
+#nav {
+  padding: 30px;
+}
+
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+#nav a.router-link-exact-active {
+  color: #42b983;
+}
 </style>

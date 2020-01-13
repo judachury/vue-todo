@@ -55,7 +55,7 @@ export default {
   },
   methods: {
     filter() {
-      //console.log("filter trigered");
+      console.log(this);
       if (this.filterType === true) {
         this.filteredItems = this.todos.filter(item => item.completed);
       } else if (this.filterType === false) {
