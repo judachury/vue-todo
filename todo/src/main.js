@@ -7,7 +7,6 @@ import storage from './storage';
 
 Vue.config.productionTip = false
 Vue.prototype.$todos = storage;
-Vue.prototype.$log = console.log;
 
 new Vue({
   router,
